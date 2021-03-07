@@ -5,12 +5,23 @@
         <style type="text/css">
         
             body {
-            font-size: 15px;
-            text-decoration: none;
-            font: 200 65px/65px;
-            font-family: Monospace;
+                font-size: 15px;
+                text-decoration: none;
+                font: 200 65px/65px;
+                font-family: Monospace;
             }
-        
+            .code-content {
+                position: relative;
+                background-color: black;
+                color: green;
+                width: 99%;
+                height: 40%;
+                margin: auto;
+                border: 1px solid #e2e2e2;
+                border-radius: 4px;
+                overscroll-behavior-x: scroll;
+                overflow-y: scroll;
+            }    
         </style>
     </head>
     
@@ -18,9 +29,10 @@
             <center>Hello World</center>
             <pre><code class=“cpp”>
             </code></pre>
-            <br>
-            <script src="https://gist.github.com/tfktronics/b195441e0c78b5b3cb903a3f149de931.js"></script>
-            <br>
+                <div class="code-content"><br>
+                <script src="https://gist.github.com/tfktronics/b195441e0c78b5b3cb903a3f149de931.js"></script>
+              <br>
+            </div>
         <script>
         </script>
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/agate.min.css"/>
