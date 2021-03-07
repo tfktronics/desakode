@@ -12,9 +12,19 @@
             }
         
         </style>
+        <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atom-one-dark.min.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js">
+        <script type="text/javascript">
+            $(document).ready(function() {
+            $('pre').each(function(i, block) {
+            hljs.highlightBlock(block);
+            });
+        });
+        </script>
     </head>
     <body>
             <center>Hello World</center>
+            <pre>#include <stdio.h></pre>
         <script>
         </script>
     </body>
