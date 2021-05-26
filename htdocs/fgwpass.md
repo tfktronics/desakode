@@ -1,2 +1,2 @@
 `5a6254c6236e06d7dee54407ca0d7870`
-copy this
+copy code diatas *tanpa quote
