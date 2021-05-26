@@ -1,2 +1,2 @@
 `5a6254c6236e06d7dee54407ca0d7870`
-copy semua kecuali quotenya
+copy this
