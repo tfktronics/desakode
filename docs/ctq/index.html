@@ -165,6 +165,7 @@
                   msg(msg_blank);
               } else if ((uname != _x_uname && pass != _x_pass) || (uname == _x_uname && pass != _x_pass) || (uname != _x_uname && pass == _x_pass)) {
                   msg(msg_error);
+                  alert('login error!');
               } else {
                   msg(msg_Fail);
               }
