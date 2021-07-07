@@ -1,1 +1,1 @@
-*Plugin page**
+**Plugin page**
