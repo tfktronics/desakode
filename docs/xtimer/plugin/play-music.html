@@ -1,0 +1,122 @@
+<script>
+var $database = {
+    list : {
+        song : ['xxx.cec.cx/98455d32560d9c6eee5b9fd97c2b2b3d/fKVgm3_x-OI/ccmwcawuwso', ''],
+        link : ['https://youtu.be/fKVgm3_x-OI', '']
+    }
+}
+$play = `
+<div id="custom-mplay" class="card b4">
+  <div class="card-body">
+    <marquee id="title-music" class="text-uppercase">song for my love</marquee>
+    <div class="btn-group w-100 pt-4" role="group">
+      <!-- <button type="button" id="play" class="btn b4-btn"><span class="bi-play-circle-fill"></span></button>
+      <button type="button" id="stop" class="btn b4-btn"><span class="bi-pause-circle-fill"></span></button> -->
+      <div id="audios-controlss" class="w-100 text-light">
+        <div class="row">
+          <div class="col-7 px-2">
+            <div class="btn-group w-100 text-light">
+              <a type="button" id="skipstart" class="btn b4-btn"><span class="bi-skip-start-fill"></span></a>
+              <div id="audios-controls"></div>
+              <a type="button" id="skipend" class="btn b4-btn"><span class="bi-skip-end-fill"></span></a>
+            </div>
+          </div>
+          <div class="col-5 px-2">
+            <a type="button" id="stop" class="btn b4 w-100 px-1 brands" style="font-size: 0.7rem;font-family: digital-7-mono"><span id="love-music-upduration"></span> / <span id="love-music-duration">00:00</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row pt-4 text-light">
+      <div class="col-6">
+        <a type="button" id="play" class="btn b4-btn w-100"></a>
+      </div>
+      <div class="col-6">
+        <a type="button" id="stop" class="btn b4-btn w-100">Stop</a>
+      </div>
+    </div> -->
+  </div>
+</div>
+<div class="pb-4">
+  <audio id="love-music" loop>
+    <source src="" type="audio/mp3">Not support!
+  </audio>
+</div>`
+//style="margin-left: -0.5rem;margin-top: -2rem;"
+//document.write($play);
+$('#mplayer').html($play)
+var audios = document.getElementById('love-music')
+
+var btnPlay = '<a type="button" id="play" class="btn b4-btn rounded-0"><span class="bi-play-circle-fill"></span></a>';
+var btnPause = '<a type="button" id="stop" class="btn b4-btn rounded-0"><span class="bi-pause-circle-fill"></span></a>';
+var getTitle = document.getElementById('mplays')
+musicTitle = getTitle.value
+if (musicTitle == '') {musicTitle =  'https://ztfcode.github.io/admin-ztf/audio/Lemon米津玄師(Full Covered by コバソロ & 春茶).mp3'} 
+else if (musicTitle == ('http://')) {loveAlert([1, 0, 'Gunakan protokol https!'])} 
+else {musicTitle = 'https://' + getTitle.value}
+
+var emptylist = 'Trek audio yang anda minta, saat ini belum tersedia!'
+$('#skipstart').click(() => {
+    audios.currentTime = 1
+    loveAlert([1, 0, emptylist])
+})
+$('#skipend').click(() => {
+    audios.currentTime = -1
+    loveAlert([1, 0, emptylist])
+})
+upDuration = () => {
+    if (audios.readyState > 0) {
+        var minutes = parseInt(audios.currentTime / 60, 10);
+        var seconds = parseInt(audios.currentTime % 60);
+    }
+    
+    minutes = (minutes == undefined) ? minutes = 0 : minutes;
+    seconds = (seconds == undefined) ? seconds = 0 : seconds;
+    minutes = (minutes < 10) ? '0' + minutes : minutes;
+    seconds = (seconds < 10) ? '0' + seconds : seconds;
+    $get('#love-music-upduration').innerHTML = minutes + ':' + seconds
+}
+audios.ontimeupdate = function(){upDuration()};
+audios.addEventListener("loadeddata", function() {
+    if (this.readyState > 0) {
+        var minutes = parseInt(this.duration / 60, 10);
+        var seconds = parseInt(this.duration % 60);
+    }
+    minutes = (minutes < 10) ? '0' + minutes : minutes;
+    seconds = (seconds < 10) ? '0' + seconds : seconds;
+    $get('#love-music-duration').innerHTML = minutes + ':' + seconds
+});
+
+audios.src = `${musicTitle}`
+$('#title-music').text(musicTitle)
+mplay = () => {
+    $('#audios-controls').html(btnPlay)
+    $('#play').click(() => {
+        audios.play()
+        if (btnPlay) {
+            $('#audios-controls').html(btnPause)
+            $('#stop').click(() => {
+                audios.pause()
+                if (btnPause) {
+                    setTimeout(mplay, 200)
+                }
+            })
+        } 
+    })
+};mplay()
+mplayStop = () => {
+    $('#audios-controls').html(btnPause)
+    $('#stop').click(() => {
+        audios.pause()
+        if (btnPause) {
+            $('#audios-controls').html(btnPlay)
+            $('#play').click(() => {
+                audios.play()
+                if (btnPlay) {
+                    setTimeout(mplayStop, 200)
+                }
+            })
+        } 
+    })
+};
+</script>
