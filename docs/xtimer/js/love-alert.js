@@ -60,7 +60,7 @@ loveAlert = $content => {
     _alertFooter = [_footer(''), _footer('batal'), _footer('tutup')]
     var $bgimg = ''
     if ($content[3] == true || $content[3] == 'true') {
-        $content[3] = `<img src="src/love-alert.webp" class="mb-2 rounded" style="opacity: 0.5;" width="245px">`
+        $content[3] = `<img src="../src/love-alert.webp" class="mb-2 rounded" style="opacity: 0.5;" width="245px">`
     } else if ($content[3] == 'bgfill') {
         $bgimg = 'bg-love-alert'
         $content[3] = ''
