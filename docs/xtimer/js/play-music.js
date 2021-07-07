@@ -32,7 +32,7 @@ var btnPlayd = '<a type="button" id="playd" class="btn b4-btn w-100"><span class
 var btnPaused = '<a type="button" id="stopd" class="btn b4-btn w-100"><span class="bi-pause-circle-fill"></span></a>';
 
 musicTitle = 'default'
-audios.src = `https://ztfcode.github.io/admin-ztf/audio/Lemon米津玄師(Full Covered by コバソロ & 春茶).mp3`
+audios.src = 'https://ztfcode.github.io/admin-ztf/xtimer/src/default.mp3'
 $('#title-musicd').text(musicTitle)
 mplayd = () => {
     $('#audios-controls-def').html(btnPlayd)
