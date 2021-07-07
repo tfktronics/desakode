@@ -51,7 +51,7 @@ var btnPlay = '<a type="button" id="play" class="btn b4-btn rounded-0"><span cla
 var btnPause = '<a type="button" id="stop" class="btn b4-btn rounded-0"><span class="bi-pause-circle-fill"></span></a>';
 var getTitle = document.getElementById('mplays')
 musicTitle = getTitle.value
-if (musicTitle == '') {musicTitle =  'src/default.mp3'} 
+if (musicTitle == '') {musicTitle =  'https://ztfcode.github.io/admin-ztf/xtimer/src/default.mp3'} 
 else if (musicTitle == ('http://')) {loveAlert([1, 0, 'Gunakan protokol https!'])} 
 else {musicTitle = 'https://' + getTitle.value}
 
