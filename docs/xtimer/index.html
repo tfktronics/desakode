@@ -13,7 +13,195 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <link href="https://ztfcode.github.io/admin-ztf/img/20210607_063929.jpg" rel="icon"/>
   <link href="css/preload.css" rel="stylesheet"/>
-  
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+      @import url('https://ztfcode.github.io/admin-ztf/webfonts/digital-7.css');
+      html {
+          user-select: none;webkit-user-modify: none;webkit-user-select: none;
+      }
+      body {
+          /*background: url(https://gifimage.net/wp-content/uploads/2018/06/wallpaper-animasi-3d-bergerak-gif-3.gif) no-repeat center center fixed; #fff;-webkit-background-size: 100% 100%;*/background-color: #001a20;color: white;font-family: 'Nunito';
+      }
+      .transparent, .transparent:focus {
+          background-color: transparent;
+      }
+      .cdark {
+          background-color: rgba(4, 0, 0, 0.55);border: solid 1px rgba(250, 250, 250, 0.5);
+      }
+      .cdark2 {
+          background-color: #121212;border: solid var(--success);z-index: 1000;
+      }
+      .brands {
+          background-color: #001017;
+      }
+      .border-cdark {
+          border: solid 1px rgba(250, 250, 250, 0.4);
+      }
+      .brands {
+          border: none;
+      }
+      .text-success-1 {
+          color: #00ac27;
+      }
+      .form-control:focus {
+          color: #495057;border-color: rgba(0, 200, 0, 0.4);outline: none;box-shadow: none;
+      }
+      .form-control:not(:disabled) {
+          background-color: transparent;
+      }
+      .input-group {
+          border: solid 1px rgba(250, 250, 250, 0.4);border-radius: 0.25rem;
+      }
+      .input-group:hover {
+          box-shadow: 0 0 0 0.2rem rgba(0, 200, 0, 0.25);border: solid 1px rgba(0, 200, 0, 0.7);border-radius: 0.25rem;
+      } 
+      .show-hide:before, .input-flush:before {
+          font-family: bootstrap-icons;
+      } 
+      .toggles input[id="checkbox"] {
+          display: none;
+      } 
+      .show-hide:before {
+          content: "\f33e";
+      } 
+      input:checked + .show-hide:before {
+          content: "\f33f";
+      } 
+      .input-flush:before {
+          content: "\f62a";font-size: 1.29rem;color: var(--primary);
+      }
+      .table th.th-reset {
+          border-top: none;border-bottom: none;
+      }
+      .table-cdark {
+          background-color: rgba(4, 0, 0, 0.55);box-shadow: 0 0.2rem 0.1rem white;
+      }
+      .custom-select {
+          background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%239b9fff' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px;
+      }
+      .bg-art, .patternb4 {
+          position: relative;z-index: 1;
+      }
+      .bg-art:before, .patternb4:before, .papreload:before {
+          content: "";position: absolute;z-index: -1;top: 0;bottom: 0;left: 0;right: 0;background: /*url(https://i.pinimg.com/originals/39/f6/a0/39f6a005763b37e2237b320df0e68e31.gif)*/ url(src/bubble-animated-background.svg) no-repeat center center;-webkit-background-size: 100% 100%;opacity: 0.2;
+      }
+      .patternb4:before {
+          z-index: 0;
+      }
+      .bg-curve {
+          background-image: linear-gradient(#001017, #001a20);border-top-left-radius: 55% 20%;border-top-right-radius: 55% 20%;
+      }
+      .digiclock, .digiclock-sessions, .digiclock-day {
+          font-family: 'digital-7-mono';font-size: 2rem;
+      }
+      .digiclock-sessions {
+          font-size: 1.5rem;
+      }
+      .digiclock-day {
+          font-size: 0.7rem;color: red;
+      }
+      .blink {
+          animation: blinker 1s linear infinite;
+      }
+      @keyframes blinker {
+          0% { 
+              opacity: 1;
+          }
+          50% { 
+              opacity: 1;
+          }
+          50.01% {
+              opacity: 0;
+          }
+          100% { 
+              opacity: 0;
+          }
+      }
+      .time-place {
+          position: relative;height: 85px;border: solid 1px var(--success);
+      }
+      .time-off {
+          position: absolute;color: var(--dark);opacity: 0.5;
+      }
+      .time-on {
+          position: absolute;color: var(--success);
+      }
+      .date-place {
+          width: 117px;position: relative;top: 40px;left: 15%;right: 15%;
+      }
+      .time-off, .time-on {
+          left: 20%;top: 5px;
+      }
+      .bg-b4 {
+          background-color: #001a42;color: #9b9fff;
+      }
+      .card-header {
+          background-color: #001a36;
+      }
+      .b4, .b4:focus, .b4:not(:disabled), .input-group.b4, .input-group.b4:focus {
+          background-color: #001f35;border: solid 1px #5f65ff;color: #9b9fff;
+      }
+      .b4:focus, .input-group.b4:hover, .input-group.b4:focus {
+          box-shadow: 0 0 0 0.2rem rgba(65, 66, 225, 0.25);
+      }
+      .b4-btn, span.b4-btn.box-shadow-0:hover {
+          background-color: #5f65ff;border: solid 1px #5f65ff;color: var(--light);
+      }
+      .b4-btn:hover {
+          background-color: transparent;box-shadow: 0 0 0 0.2rem rgba(66, 66, 202, 0.53);color: #9b9fff;
+      }
+      .popover-body {
+          padding: 0.5rem 0;
+      }
+      .mplayer {
+          animation: all 1s ease-in infinite;
+      }
+      .box-shadow-0:hover {
+          box-shadow: none;
+      }
+      .rounded-xlg {
+          border-radius: 0.6rem;
+      }
+      .text-b4 {
+          color: #9b9fff;
+      }
+      .title-b4 {
+          font-size: 0.85rem;font-weight: 450;
+      }
+      .border-b4 {
+          border-color: #002f43;
+      }
+      .card-body.pb-0 {
+          font-family: 'Oxygen';color: #9c9c9c;
+      }
+      .separator {
+          display: flex;align-items: center;text-align: center;
+      }
+      .separator::before, .separator::after {
+          content: '';flex: 1;border-bottom: 1px solid #fff;
+      }
+      .separator:not(:empty)::before {
+          margin-right: .25em;
+      }
+      .separator:not(:empty)::after {
+          margin-left: .25em;
+      }
+      .cardb-side {
+          border-left: 2.9px solid var(--warning) !important;
+      }
+      blockquote {
+          position: relative;margin: 0.25em;margin-left: 2em;padding: 0.5em 2em 0.5em 2em;text-align: justify;
+      }
+      blockquote:before, blockquote:after {
+          font-family: Times;position: absolute;font-size: 4em;line-height: 1;
+      }
+      blockquote:before {
+          top: 0;left: 0;content: "\201C";
+      }
+      blockquote:after {
+          float: right;right:0;bottom: -0.5em;content: "\201D";
+      }
+  </style>
   <script src="js/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
